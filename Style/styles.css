@@ -65,6 +65,10 @@ body{
   box-shadow: 2px 2px 2px;
 }
 
+.carousel-item img {
+  height: 600px;
+}
+
 
 .card {
   /* width: 18rem; */
