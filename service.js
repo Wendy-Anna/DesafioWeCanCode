@@ -1,6 +1,6 @@
 Cards();
 
-function Get(Url) {
+function pegarApiQuartos(Url) {
   var Httpreq = new XMLHttpRequest(); // a new request
   Httpreq.open("GET", Url, false);
   Httpreq.send();
@@ -16,13 +16,13 @@ function Cards() {
   // const json_obj = JSON.parse(Get("https://dry-cliffs-94979.herokuapp.com/"), (key, value) => {
 
   // });
-  const json_obj = JSON.parse(Get("https://dry-cliffs-94979.herokuapp.com/"));
+  const json_obj = JSON.parse(pegarApiQuartos("https://dry-cliffs-94979.herokuapp.com/"));
   for (let i in json_obj) {
 
     container.innerHTML +=
       '<div class="col-md-4">'
-      + ' <div class="card" style="width: 18rem;"> '
-      + '<img src="' + json_obj[i].photo + '" class="card-img-top" alt="..."> '
+      + ' <div class="card"> '
+      + '<div class="img"> <img src="' + json_obj[i].photo + '" class="card-img-top" alt="..."> </div>'
       + ' <div class="card-body"> '
       + ' <h5 class="card-title" >' + json_obj[i].property_type + '</h5> '
       + ' <p class="card-text">R$ ' + json_obj[i].price + ' </p> '
